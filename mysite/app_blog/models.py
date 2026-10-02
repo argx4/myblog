@@ -14,6 +14,14 @@ class Category(models.Model):
     def __str__(self):
         return self.category
 
+    def get_absolute_url(self):
+        try:
+            url = reverse('article-category-list', kwargs={'slug': self.slug})
+        except:
+            url = '/'
+        return url
+
+
 class Article(models.Model):
     title = models.CharField(u'Заголовок',
          max_length=250, help_text=u'максимум 250 символів')
@@ -40,7 +48,7 @@ class Article(models.Model):
 
     def get_absolute_url(self):
         try:
-            url = reverse('news-detail',
+            url = reverse('article-detail',
                           kwargs={'slug': self.slug,
                                   'year': self.pub_date.strftime('%Y'),
                                   'month': self.pub_date.strftime('%m'),
