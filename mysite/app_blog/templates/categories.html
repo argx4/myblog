@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+Категорії
+{% if categories %}
+{% for item in categories %}
+<div>
+    <a href="{{ item.get_absolute_url }}">
+        <h4>{{ item.category }}</h4>
+    </a>
+</div>
+{% endfor %}
+{% endif %}
+{% endblock %}

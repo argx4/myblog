@@ -1,4 +1,3 @@
-from PIL.DdsImagePlugin import item
 from django.shortcuts import render
 from django.views.generic import TemplateView, DateDetailView, ListView
 from .models import Article, Category
@@ -59,3 +58,8 @@ class ArticleCategoryList(ArticleList):
         return Article.objects.filter(
             category__slug=self.kwargs['slug']
         )
+
+class CategoryList(ListView):
+    model = Category
+    template_name = 'categories.html'
+    context_object_name = 'categories'
