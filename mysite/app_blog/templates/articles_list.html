@@ -2,7 +2,9 @@
 {% load static %}
 {% block content %}
 <h1>Всі публікації</h1>
-{% if category %}{{ category }}{% endif %}
+{% if category %}
+<h6 style="color: white;">Категорія: {{ category }}</h6>
+{% endif %}
 
 <div class="row">
     {% for item in items %}
