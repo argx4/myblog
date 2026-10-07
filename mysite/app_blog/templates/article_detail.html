@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <ol class="breadcrumb">
-    <li><a href="{{ item.category.get_absolute_url }}">{{ item.category|upper }}</a></li>
+    <li><a href="{{ item.category.get_absolute_url }}"> {{item.category|upper }} </a></li>
 </ol>
 <div id="publ-detail">
     <h2>{{ item.title }}</h2>

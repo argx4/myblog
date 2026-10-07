@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<h1>Всі публікації</h1>
 {% if category %}{{ category }}{% endif %}
 
 <div class="row">
     {% for item in items %}
-    <div class="col-md-4 mb-4">
+    <div class="col-12 col-sm-6 col-lg-4 mb-4">
         <div class="card h-100">
             <img src="{{ item.images.all.0.image.url }}" class="card-img-top" alt="...">
             <div class="card-body">
@@ -14,8 +15,7 @@
                 <p class="card-text">{{ item.description|safe|escape|truncatewords_html:32 }}</p>
             </div>
             <div class="card-body">
-                <a href="{{ item.get_absolute_url }}" type="button" class="btn btn-outline-secondary"
-                    id="knopkalist">Читати
+                <a href="{{ item.get_absolute_url }}" type="button" class="btn btn-secondary" id="knopkalist">Читати
                     повністю</a>
             </div>
         </div>
