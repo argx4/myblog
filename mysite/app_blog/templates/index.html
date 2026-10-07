@@ -4,11 +4,11 @@
 
 {% if articles %}
 {% for item in articles %}
-<div>
-    <a href="{{ item.get_absolute_url }}">
+<div id="golovpubl">
+    <a href="{{ item.get_absolute_url }}" type="button" class="btn btn-outline-secondary" id="golovpub2">
         <h4>{{ item.title }}</h4>
     </a>
-    <h5>
+    <h5 class="text-center">
         {{ item.pub_date|date:"j E Y"|safe|linebreaks }}
     </h5>
     <p>
@@ -17,7 +17,7 @@
 </div>
 {% endfor %}
 {% endif %}
-<a href="{% url 'articles-list' %}">
+<a href="{% url 'articles-list' %}" class="btn btn-secondary" id="knopkapubl">
     <h4>Всі публікації</h4>
 </a>
 {% endblock %}

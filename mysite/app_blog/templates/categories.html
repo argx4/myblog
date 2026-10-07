@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-Категорії
+<h1 class="text-center">Категорії</h1>
 {% if categories %}
 {% for item in categories %}
 <div>
-    <a href="{{ item.get_absolute_url }}">
-        <h4>{{ item.category }}</h4>
+    <a href="{{ item.get_absolute_url }}" type="button" class="btn btn-secondary" id="knopkacat">
+        <h4>{{ item.category|upper }}</h4>
     </a>
 </div>
 {% endfor %}

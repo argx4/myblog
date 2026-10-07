@@ -1,0 +1,24 @@
+#home {
+    margin: 10px;
+}
+
+#home:active {
+    transform: scale(0.95);
+}
+
+#categories:active {
+    transform: scale(0.95);
+}
+
+#articles:active {
+    transform: scale(0.95);
+}
+
+#categories {
+    margin: 10px;
+
+}
+
+#articles {
+    margin: 10px;
+}
