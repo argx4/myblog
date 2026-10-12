@@ -13,6 +13,7 @@ class HomeTest(TestCase):
         view = resolve('/')
         self.assertEqual(view.func.view_class, HomePageView)
 
+class ArticleTest(TestCase):
     def test_category_view_status_code(self):
         url = reverse('articles-category-list', args=('name',))
         response = self.client.get(url)
